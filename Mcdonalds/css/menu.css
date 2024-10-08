@@ -1,0 +1,6 @@
+#Opcoes {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
