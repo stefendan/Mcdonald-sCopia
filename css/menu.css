@@ -5,11 +5,16 @@ body {
 #Opcoes {
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 5%;
     background-color: yellow;
 }
 
 p {
     margin-top: 50px;
     margin-right: 100px;
+}
+
+#footer > img{
+  height: 100%;
+  width: 100%;
 }
