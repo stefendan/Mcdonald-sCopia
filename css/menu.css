@@ -1,20 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: red;
+    font-family: Arial, sans-serif;
 }
 
 #Opcoes {
     display: flex;
-    justify-content: center;
-    margin-top: 5%;
+    justify-content: space-around;
     background-color: yellow;
+    padding: 20px;
 }
 
-p {
-    margin-top: 50px;
-    margin-right: 100px;
+.opcao {
+    text-align: center;
 }
 
-#footer > img{
-  height: 100%;
-  width: 100%;
+.opcao img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.opcao a {
+    text-decoration: none;
+    color: black;
+}
+
+.opcao p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#footer img {
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#header {
+    background-color: red;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header img {
+    height: 50px;
 }
