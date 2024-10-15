@@ -1,15 +1,25 @@
 .carrinho {
+    position: fixed;
+    top: 0;
+    left: 5vw;
+
+    width: 90vw;
+    height: 100%;
     max-width: 90vw;
-    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
+    z-index: 1000;
+    display: none; 
+    overflow-y: auto;
+}
+.carrinho.show {
+    display: block; 
+}
 h1 {
     font-size: 54px;
-    margin-bottom: 20px;
 }
 h2 {
     font-size: 36px; 
@@ -24,6 +34,14 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.titulo-carrinho span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fechar-carrinho{
+    margin-bottom: 10px;
 }
 .limpar, .adicionar-desconto  {
     color: #006bae;

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/produtos.css">
     <link rel="stylesheet" href="../../css/pedidos.css">
+    <link rel="stylesheet" href="../../css/carrinho.css">
+    <script src="../../js/carrinho.js" defer></script>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <title>Bebidas</title>
 </head>
@@ -61,7 +63,7 @@
                 Rua xxxxxxxxx 11910001111, Guarulhos, SP
             </div>
             <a href="../trocar_endereco.html">
-            <button class="trocar-endereco">Trocar</button>
+                <button class="trocar-endereco">Trocar</button>
             </a>
         </div>
       
@@ -70,6 +72,66 @@
                 <img src="../../img/Pedidos/iconeMoto2.svg" alt="Icone moto">
                 <span class="total-itens">1</span>
             </a>
+    </div>
+
+    <div class="carrinho">
+        <section class="titulo-carrinho">
+            <h1>Seu pedido</h1>
+            <span>
+                <span class="fechar-carrinho">X</span>
+                <span class="limpar">Limpar</span>
+            </span>
+           
+        </section>
+        <div class="endereco-carrinho">
+            <img src="../../img/Pedidos/iconeMoto.svg" alt="Ícone delivery">
+            <span>Endereço de entrega</span>
+            <p>Rua xxxxxxxx 11900001111, Guarulhos, SP</p>
+            <a href="../trocar_endereco.html">
+                <button class="trocar-endereco-carrinho" >Trocar</button>
+            </a>
+        </div>
+        
+        <div class="itens-pedido">
+            <div class="item-info">
+                <img src="" alt="Imagem do Produto">
+                <div>
+                    <p class="nome-item">Big Mac</p>
+                </div>
+            </div>
+            <div class="preco-item">
+                <span class="preco">R$ 42,90</span>
+                <div class="quantidade-item">
+                    <button class="excluir-item">
+                        <img src="../../img/Pedidos/excluirIcone.svg" alt="Ícone excluír" class="icone-excluir">
+                    </button>
+                    <span>1</span>
+                    <button class="adicionar-item">
+                        <img src="../../img/Pedidos/adicionarIcone.svg" alt="Ícone adicionar" class="icone-adicionar">
+                    </button>
+                 
+                </div>
+            </div>
+        </div>
+        
+        <div class="sessao-total-carrinho">
+            <div class="desconto">
+                <span class="sessao-desconto">
+                    <img src="../../img/Pedidos/descontoIcone.svg" alt="Ícone de desconto" class="icone-desconto">
+                    Você tem um código de desconto?
+                </span>
+                <span class="adicionar-desconto">Adicionar</span>
+            </div>
+            <div class="total">
+                <h2>Total</h2>
+                <span class="preco-total-carrinho">R$ 00,00</span>
+            </div>
+        </div>
+
+        <div class="acoes">
+            <button class="adicionar-itens-diferentes">Adicionar mais itens</button>
+            <button class="proxima-pagina">Próximo</button>
+        </div>
     </div>
 </body>
 </html>
