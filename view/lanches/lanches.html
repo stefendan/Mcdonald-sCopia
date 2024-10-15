@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../../css/pedidos.css">
     <link rel="stylesheet" href="../../css/carrinho.css">
     <script src="../../js/carrinho.js" defer></script>
+    <script src="../../js/pedido.js" defer></script>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <script src="trocar_endereco.js" defer></script>
     <title>Sanduíches</title>
 </head>
 <body>
@@ -28,17 +28,17 @@
     <main>
         <div id="geral">
             <div class="produto">
-                <a href="#">
+                <span id="lanche-1">
                     <img src="../../img/Sanduiches/lanche_1_icon.png" alt="Sanduíche 1">
-                    <p>Sanduíche de Frango</p>
-                </a>
+                    <p>McChicken</p>
+                </span>
             </div>
 
             <div class="produto">
-                <a href="#">
+                <span id="lanche-2">
                     <img src="../../img/Sanduiches/lanche_2_icon.png" alt="Sanduíche 2">
-                    <p>Sanduíche Duplo</p>
-                </a>
+                    <p>Big Mac</p>
+                </span>
             </div>
         </div>
     </main>
@@ -88,7 +88,7 @@
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Ícone delivery">
             <span>Endereço de entrega</span>
             <p>Rua xxxxxxxx 11900001111, Guarulhos, SP</p>
-            <a href="../lanches/lanches.html">
+            <a href="../trocar_endereco.html">
                 <button class="trocar-endereco-carrinho" >Trocar</button>
             </a>
         </div>
@@ -103,11 +103,11 @@
             <div class="preco-item">
                 <span class="preco">R$ 42,90</span>
                 <div class="quantidade-item">
-                    <button class="excluir-item">
+                    <button class="excluir-item" data-produto-id="lanche-2">
                         <img src="../../img/Pedidos/excluirIcone.svg" alt="Ícone excluír" class="icone-excluir">
                     </button>
                     <span>1</span>
-                    <button class="adicionar-item">
+                    <button class="adicionar-item" data-produto-id="lanche-2">
                         <img src="../../img/Pedidos/adicionarIcone.svg" alt="Ícone adicionar" class="icone-adicionar">
                     </button>
                  
@@ -134,7 +134,6 @@
             <button class="proxima-pagina">Próximo</button>
         </div>
     </div>
-
     <script>
         // Recupera o endereço do localStorage
         const enderecoSalvo = localStorage.getItem("endereco");
