@@ -5,12 +5,11 @@
 }
 
 body {
-    background-color: red;
-    font-family: Arial, sans-serif;
+    font-family: "Speedee", arial, helvetica, sans-serif;
+
 }
 
 #header {
-    background-color: red;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -70,3 +69,4 @@ nav ul li a {
     width: 100%;
     height: auto;
 }
+

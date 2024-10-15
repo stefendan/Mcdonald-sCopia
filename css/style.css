@@ -8,7 +8,39 @@
     font-size: 18px;
     font-family: "Speedee", arial, helvetica, sans-serif;
 }
+h1,h2{
+    color: #292929;
+    font-weight: 700;
+    font-size: 54px;
+}
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    text-align: right;
+    color: #292929;
+}
+.rodape-links{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+p, button, a{
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+button{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-flex;
+    cursor: pointer;
+    padding: 14px 30px;
+    min-width: 114px;
+    height: 44px;
+    align-items: center;
+}
 #logo{
+    max-height: 100%;
+    max-width: 100%; 
+    object-fit: contain;
     width: 108px;
     height: 95px;
 }
@@ -29,7 +61,6 @@
 #menu-principal{
     display: flex;
     justify-content: end;
-   
     background-image: url("../img/banner.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -41,15 +72,33 @@
     margin-right: 5%;
     margin-top: 30%;
 }
+#botao {
+    display: flex;
+    justify-content: flex-end; 
+}
 #rodape{
     display: flex;
     box-sizing: border-box;
     align-items: center;
     background-color: #ffbc0d;
     width: 100%;
-    height: 12vh;
+    height: 18vh;
     padding: 20px;
     padding-left: 5%;
     padding-right: 5%;
 }
 
+#imagem-rodape{
+    max-height: 100%;
+    max-width: 100%; 
+    object-fit: contain;
+    width: 123px;
+    height: 123px;
+}
+#background-rodape{
+    display: block;
+    margin: 0 auto; 
+    width: 70%; 
+    height: auto;
+
+}

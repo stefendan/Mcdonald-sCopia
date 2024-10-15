@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>McDonald's - Cópia Original</title>
 </head>
 <body>
@@ -13,24 +14,27 @@
         <a href="index.html">
             <img src="img/logo.png" alt="logo da empresa" id="logo">
         </a>
-        <a href="" class="paginas">Cardápio</a>
-        <a href="" class="paginas">Meus pedidos</a>
+        <a href="view/menu/menu.html" class="paginas">Cardápio</a>
+        <a href="view/pedidos/carrinho.html" class="paginas">Meus pedidos</a>
         
     </header>
     <main id="menu-principal">
         <section id="texto-principal">
             <h1>Dê uma olhada no Cardápio!</h1>
             <p>Peça seu Méqui pelo McDelivery ou Peça e Retire.</p>
-            <a href="view/menu/menu.html">
+            <a id="botao" href="view/menu/menu.html">
                 <button>Clique aqui!</button>
             </a>
         </section>
     </main>
     <footer id="rodape">
-        <img src="img/logo_footer.png" alt="logo da empresa para o rodapé">
-      
+        <img id="imagem-rodape" src="img/logo_footer.png" alt="logo da empresa para o rodapé">
+        <a class="rodape-links" href="#">Trabalhe Conosco</a>
+        <a class="rodape-links" href="#">Portas Abertas</a>
+        <a class="rodape-links" href="#">Contato</a>
+        <a class="rodape-links" href="#">Redes Sociais</a>
     </footer>
-    <img src="img/background_footer.png" alt="">
+    <img id="background-rodape" src="img/background_footer.png" alt="">
     
 </body>
 </html>
