@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/carrinho.css">
     <script src="../../js/carrinho.js" defer></script>
     <script src="../../js/pedido.js" defer></script>
+    <script src="../js/endereco_novo.js" defer></script>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <title>Sanduíches</title>
 </head>
@@ -60,7 +61,7 @@
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Icone delivery">
             <div class="endereco-info">
                 <strong>Endereço de entrega</strong><br>
-                Rua xxxxxxxxx 11910001111, Guarulhos, SP
+                <p></p>
             </div>
             <a href="../trocar_endereco.html">
                 <button class="trocar-endereco">Trocar</button>
@@ -134,14 +135,5 @@
             <button class="proxima-pagina">Próximo</button>
         </div>
     </div>
-    <script>
-        // Recupera o endereço do localStorage
-        const enderecoSalvo = localStorage.getItem("endereco");
-    
-        // Atualiza o conteúdo do <p> com o endereço salvo
-        if (enderecoSalvo) {
-            document.getElementById("endereco-entrega").textContent = enderecoSalvo;
-        }
-    </script>
 </body>
 </html>
