@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="../../css/carrinho.css">
     <script src="../../js/carrinho.js" defer></script>
     <script src="../../js/pedido.js" defer></script>
-    <script src="../js/endereco_novo.js" defer></script>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <title>Sanduíches</title>
 </head>
 <body>
     <header>
         <div id="header">
-            <img src="../../img/logo_header_icon.svg" alt="Imagem logo McDonald">
+            <a href="../../index.html">
+                <img src="../../img/logo_header_icon.svg" alt="Imagem logo McDonald">
+            </a>
             <nav>
                 <ul>
                     <li><a href="../menu/menu.html">Menu</a></li>
@@ -29,14 +30,14 @@
     <main>
         <div id="geral">
             <div class="produto">
-                <span id="lanche-1">
+                <span id="lanche_1">
                     <img src="../../img/Sanduiches/lanche_1_icon.png" alt="Sanduíche 1">
                     <p>McChicken</p>
                 </span>
             </div>
 
             <div class="produto">
-                <span id="lanche-2">
+                <span id="lanche_2">
                     <img src="../../img/Sanduiches/lanche_2_icon.png" alt="Sanduíche 2">
                     <p>Big Mac</p>
                 </span>
@@ -61,9 +62,9 @@
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Icone delivery">
             <div class="endereco-info">
                 <strong>Endereço de entrega</strong><br>
-                <p></p>
+                Rua xxxxxxxxx 11910001111, Guarulhos, SP
             </div>
-            <a href="../trocar_endereco.html">
+            <a href="../trocar_endereco.html" onclick="salvarPaginaAtual()">
                 <button class="trocar-endereco">Trocar</button>
             </a>
         </div>
@@ -89,33 +90,13 @@
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Ícone delivery">
             <span>Endereço de entrega</span>
             <p>Rua xxxxxxxx 11900001111, Guarulhos, SP</p>
-            <a href="../trocar_endereco.html">
+            <a href="../trocar_endereco.html" onclick="salvarPaginaAtual()">
                 <button class="trocar-endereco-carrinho" >Trocar</button>
             </a>
         </div>
-        
-        <div class="itens-pedido">
-            <div class="item-info">
-                <img src="" alt="Imagem do Produto">
-                <div>
-                    <p class="nome-item">Big Mac</p>
-                </div>
-            </div>
-            <div class="preco-item">
-                <span class="preco">R$ 42,90</span>
-                <div class="quantidade-item">
-                    <button class="excluir-item" data-produto-id="lanche-2">
-                        <img src="../../img/Pedidos/excluirIcone.svg" alt="Ícone excluír" class="icone-excluir">
-                    </button>
-                    <span>1</span>
-                    <button class="adicionar-item" data-produto-id="lanche-2">
-                        <img src="../../img/Pedidos/adicionarIcone.svg" alt="Ícone adicionar" class="icone-adicionar">
-                    </button>
-                 
-                </div>
-            </div>
+        <div class="pedidos">
+            <div class="carrinho-separacao"></div>
         </div>
-        
         <div class="sessao-total-carrinho">
             <div class="desconto">
                 <span class="sessao-desconto">
@@ -135,5 +116,14 @@
             <button class="proxima-pagina">Próximo</button>
         </div>
     </div>
+    <script>
+        // Recupera o endereço do localStorage
+        const enderecoSalvo = localStorage.getItem("endereco");
+    
+        // Atualiza o conteúdo do <p> com o endereço salvo
+        if (enderecoSalvo) {
+            document.getElementById("endereco-entrega").textContent = enderecoSalvo;
+        }
+    </script>
 </body>
 </html>

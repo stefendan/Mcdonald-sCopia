@@ -69,7 +69,10 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
 }
-
+.pedidos{
+    display: flex;
+    flex-direction: column;
+}
 .itens-pedido {
     display: flex;
     justify-content: space-between;
@@ -77,7 +80,13 @@ h2 {
     border-bottom: 1px solid #ddd;
     padding: 20px 0;
 }
-
+.carrinho-separacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
 .item-info {
     display: flex;
     align-items: center;
