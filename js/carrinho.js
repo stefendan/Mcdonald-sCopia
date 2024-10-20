@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.querySelector('.pedido-sumario').addEventListener('click', function() {
-    document.querySelector('.carrinho').classList.add('show');
-
-    document.querySelector('header').style.display = 'none';
-    document.querySelector('main').style.display = 'none';
-    document.querySelector('footer').style.display = 'none';
+document.querySelectorAll('.pedido-sumario').forEach(function(element) {
+    element.addEventListener('click', function() {
+        document.querySelector('.carrinho').classList.add('show');
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('main').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+    });
 });
-
-// Fechar o carrinho e mostrar novamente o header, main e footer
+// fecha o carrinho e mostra o header, main e footer
 document.querySelector('.fechar-carrinho').addEventListener('click', function() {
     document.querySelector('.carrinho').classList.remove('show');
 

@@ -21,7 +21,7 @@
             <nav>
                 <ul>
                     <li><a href="../menu/menu.html">Menu</a></li>
-                    <li><a href="../pedidos/carrinho.html">Carrinho</a></li>
+                    <li><a href="#" class="pedido-sumario">Carrinho</a></li>
                 </ul>
             </nav>
         </div>
@@ -62,7 +62,7 @@
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Icone delivery">
             <div class="endereco-info">
                 <strong>Endereço de entrega</strong><br>
-                Rua xxxxxxxxx 11910001111, Guarulhos, SP
+                <span class="endereco-entrega">Bairro - Rua xxxxx, Número da residência, número de telefone, nome, cidade, estado, CEP</span>
             </div>
             <a href="../trocar_endereco.html" onclick="salvarPaginaAtual()">
                 <button class="trocar-endereco">Trocar</button>
@@ -89,7 +89,7 @@
         <div class="endereco-carrinho">
             <img src="../../img/Pedidos/iconeMoto.svg" alt="Ícone delivery">
             <span>Endereço de entrega</span>
-            <p>Rua xxxxxxxx 11900001111, Guarulhos, SP</p>
+            <p class="endereco-entrega">Bairro - Rua xxxxx, Número da residência, número de telefone, nome, cidade, estado, CEP</p>
             <a href="../trocar_endereco.html" onclick="salvarPaginaAtual()">
                 <button class="trocar-endereco-carrinho" >Trocar</button>
             </a>
@@ -112,18 +112,11 @@
         </div>
 
         <div class="acoes">
-            <button class="adicionar-itens-diferentes">Adicionar mais itens</button>
+            <a href="../menu/menu.html">
+                <button class="adicionar-itens-diferentes" >Adicionar mais itens</button>
+            </a>
             <button class="proxima-pagina">Próximo</button>
         </div>
     </div>
-    <script>
-        // Recupera o endereço do localStorage
-        const enderecoSalvo = localStorage.getItem("endereco");
-    
-        // Atualiza o conteúdo do <p> com o endereço salvo
-        if (enderecoSalvo) {
-            document.getElementById("endereco-entrega").textContent = enderecoSalvo;
-        }
-    </script>
 </body>
 </html>

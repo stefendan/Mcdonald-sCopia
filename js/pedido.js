@@ -12,8 +12,6 @@ let precosSobremesas = {
 };
 let total = parseFloat(localStorage.getItem('total')) || 0; 
 let totalItens = localStorage.getItem('totalItens') || 0; 
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
 
 function atualizarPrecoTotal() {
     const totalElemento = document.querySelector('.preco-total');
@@ -73,7 +71,6 @@ function removerTotalItens(){
 // menu
 document.querySelectorAll('.produto span').forEach((span) => {
     span.addEventListener('click', () => {
-        console.log(document.querySelector('#seletorDoElemento'));
         const produtoId = span.getAttribute('id'); 
         adicionarItem(produtoId);  
         adicionarTotalItens();
@@ -81,12 +78,13 @@ document.querySelectorAll('.produto span').forEach((span) => {
         const nomeProduto = span.querySelector('p').textContent;
         const precoProduto = precosLanches[produtoId] || precosBebidas[produtoId] || precosSobremesas[produtoId] || 0;
 
-        adicionarItemCarrinho(nomeProduto, precoProduto, produtoId);
+        adicionarItemCarrinho(nomeProduto, precoProduto, produtoId, '1');
+        salvarCarrinho();
     });
 });
 
 // carrinho
-function adicionarItemCarrinho(nome, preco, produtoId) {
+function adicionarItemCarrinho(nome, preco, produtoId, quantidade) {
     const itemPedidoDiv = document.createElement('div');
     itemPedidoDiv.classList.add('itens-pedido');
 
@@ -134,7 +132,7 @@ function adicionarItemCarrinho(nome, preco, produtoId) {
     excluirButton.appendChild(excluirIcon);
 
     const quantidadeSpan = document.createElement('span');
-    quantidadeSpan.textContent = '1'; 
+    quantidadeSpan.textContent = `${quantidade}`; 
 
     const adicionarButton = document.createElement('button');
     adicionarButton.classList.add('adicionar-item');
@@ -193,7 +191,7 @@ function adicionarItemCarrinho(nome, preco, produtoId) {
 }
 function salvarCarrinho() {
     const carrinho = [];
-    document.querySelectorAll('.item-pedido').forEach((itemPedidoDiv) => {
+    document.querySelectorAll('.itens-pedido').forEach((itemPedidoDiv) => {
         const nome = itemPedidoDiv.querySelector('.nome-item').textContent;
         const preco = parseFloat(itemPedidoDiv.querySelector('.preco').textContent.replace('R$', ''));
         const quantidade = parseInt(itemPedidoDiv.querySelector('.quantidade-item span').textContent);
@@ -206,14 +204,15 @@ function salvarCarrinho() {
             produtoId
         });
     });
+    console.log(carrinho);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    
 }
 function restaurarCarrinho() {
+
     const carrinhoSalvo = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinhoSalvo.forEach((item) => {
-        for (let i = 0; i < item.quantidade; i++) {
-            adicionarItemCarrinho(item.nome, item.preco, item.produtoId);
-        }
+        adicionarItemCarrinho(item.nome, item.preco, item.produtoId, item.quantidade);
     });
 }
 document.querySelector('.limpar').addEventListener('click', () => {
@@ -235,4 +234,15 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarPrecoTotal();
     atualizarTotalItens();
     restaurarCarrinho();
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);// Remove o hash
+    }
+    let enderecoSalvo = localStorage.getItem('endereco');
+    
+    if (enderecoSalvo) {
+        const elementosEndereco = document.querySelectorAll('.endereco-entrega');
+        elementosEndereco.forEach(elemento => {
+            elemento.textContent = enderecoSalvo;
+        });
+    }
 });
